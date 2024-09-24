@@ -1,0 +1,61 @@
+# Archivos de compilación y directorios binarios
+bin/
+obj/
+
+# Archivos de dependencias NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Directorios de publicación
+publish/
+out/
+
+# Archivos generados de VSCode
+.vscode/
+
+# Configuración local del usuario de Visual Studio
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Archivos de bloqueo generados por el sistema
+.lock.json
+
+# Configuración del entorno local
+.env
+.env.*
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Archivos de debug/release
+*.pdb
+*.mdb
+
+# Archivos de configuración para paquetes de terceros
+packages/
+
+# Archivos de caché
+.cache/
+npm-debug.log
+yarn-debug.log*
+yarn-error.log*
+
+# Configuración de Docker (si aplica)
+docker-compose.override.yml
+.docker/
+
+# Directorios de configuración de herramientas de desarrollo
+.idea/
+node_modules/
