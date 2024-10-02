@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace Taskydo.Entities
 {
@@ -11,6 +12,8 @@ namespace Taskydo.Entities
         public string description { get; set; }
         public int order { get; set; }
         public DateTime creationDate { get; set; }
+        public string userCreationId { get; set; }
+        public IdentityUser userCreation { get; set; }
         public List<Step> steps { get; set; }
         public List<AttachedFile> attachedFiles { get; set; }
     }

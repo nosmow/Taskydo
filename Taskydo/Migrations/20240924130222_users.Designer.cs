@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Taskydo;
 
@@ -11,9 +12,11 @@ using Taskydo;
 namespace Taskydo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240924130222_users")]
+    partial class users
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -296,12 +299,7 @@ namespace Taskydo.Migrations
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<string>("userCreationId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("id");
-
-                    b.HasIndex("userCreationId");
 
                     b.ToTable("tasks");
                 });
@@ -377,15 +375,6 @@ namespace Taskydo.Migrations
                         .IsRequired();
 
                     b.Navigation("Task");
-                });
-
-            modelBuilder.Entity("Taskydo.Entities.Task", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "userCreation")
-                        .WithMany()
-                        .HasForeignKey("userCreationId");
-
-                    b.Navigation("userCreation");
                 });
 
             modelBuilder.Entity("Taskydo.Entities.Task", b =>
